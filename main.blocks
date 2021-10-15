@@ -1,0 +1,18 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="3=X|TR:BYyB+-v,K!JDj">enter_gate</variable><variable id="d92A?W|x.=gGK*,sPq+y">exit_gate</variable><variable id="(_IaS5Ygl?m#JLFfc`YC">elapsed</variable></variables><block type="device_pin_released" id=")IV-goaLXDYjW#jc.U5w" x="0" y="0"><field name="NAME">TouchPin.P0</field><comment>When the connection between pin 0 (P0) and ground (GND) is broken, the enter_gate variable is set to the current running time of the micro:bit</comment><statement name="HANDLER"><block type="variables_set" id="9qqW{kk2YVJK]9yX|JOt"><field name="VAR" id="3=X|TR:BYyB+-v,K!JDj">enter_gate</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_get_running_time" id="ED7F2$Xc;Hu~Js^dex(-"/></value><next><block type="device_show_leds" id="M5dn~ejAy.s0XlG3Uh)t"><field name="LEDS">`
+        # . . . # 
+        . . . . # 
+        # # . . # 
+        . . . . # 
+        # . . . #
+        `</field></block></next></block></statement></block><block type="device_pin_released" id="tH@*1-PvXrb[UFeoMB)t" x="496" y="0"><field name="NAME">TouchPin.P2</field><comment>When the connection between Pin 2 (P2) and ground (GND is broken, the 'exit_gate' variable is set the running time.
+
+The elapsed time variable is calculated using a Math block that calculates the difference between the exit gate and enter gate times.
+
+The code then displays the calculated elapsed time on the LED screen.
+    </comment><statement name="HANDLER"><block type="variables_set" id="RGB2TR-hDc_1r=/b25!p"><field name="VAR" id="d92A?W|x.=gGK*,sPq+y">exit_gate</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="device_get_running_time" id=".3-U),AAz@FK~Hrsayk0"/></value><next><block type="device_show_leds" id="jFaru/dim#UR6^_##P@i"><field name="LEDS">`
+        # . . . # 
+        . . . . . 
+        . . . # # 
+        . . . . . 
+        # . . . #
+        `</field><next><block type="variables_set" id="wRAVtE`GKb~KGA=o*iH="><field name="VAR" id="(_IaS5Ygl?m#JLFfc`YC">elapsed</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="math_arithmetic" id="@|OJ$hosYfK+bq.),)Rq"><field name="OP">MINUS</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get" id="/x_nG@fc=AUro1?hJF1q"><field name="VAR" id="d92A?W|x.=gGK*,sPq+y">exit_gate</field></block></value><value name="B"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get" id="[mk|E]qKh8rRx9sR+lwN"><field name="VAR" id="3=X|TR:BYyB+-v,K!JDj">enter_gate</field></block></value></block></value><next><block type="device_while" id="`8SYe%X?jQEP%7]k#%zi"><value name="COND"><shadow type="logic_boolean" id="p2,IAuQ3B9n^c}[y+[IV"><field name="BOOL">TRUE</field></shadow></value><statement name="DO"><block type="device_print_message" id="l6rVT+Hf/T$Sry-fFg{="><value name="text"><shadow type="text"><field name="TEXT">Hello!</field></shadow><block type="text_join" id="pk}m[^3^[|GV#nH+(=E["><mutation items="2"/><value name="ADD0"><shadow type="text"><field name="TEXT"/></shadow><block type="variables_get" id="W|7fjp@kv4~d/x^J%kF8"><field name="VAR" id="(_IaS5Ygl?m#JLFfc`YC">elapsed</field></block></value><value name="ADD1"><shadow type="text" id="1dJ)sX0T.,`MtS1hp0y]"><field name="TEXT">ms</field></shadow></value></block></value></block></statement></block></next></block></next></block></next></block></statement></block></xml>
